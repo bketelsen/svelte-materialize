@@ -1482,7 +1482,7 @@ var app = (function () {
 			      <ul id="nav-mobile" class="sidenav"><li><a href="/">Home</a></li>
 			        <li><a href="/project1">Project1</a></li></ul>
 			      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a></div>`;
-				nav.className = "light-blue lighten-1";
+				nav.className = "teal lighten-1";
 				attr(nav, "role", "navigation");
 			},
 
@@ -1526,8 +1526,8 @@ var app = (function () {
 			            <li><a class="white-text" href="https://github.com/bketelsen">Github: bketelsen</a></li>
 			            <li><a class="white-text" href="https://brian.dev">Web: brian.dev</a></li></ul></div></div></div>
 			    <div class="footer-copyright"><div class="container">
-			      Made by <a class="orange-text text-lighten-3" href="https://brian.dev">Brian Ketelsen</a></div></div>`;
-				footer.className = "page-footer orange";
+			      Made by <a class="amber-text text-lighten-3" href="https://brian.dev">Brian Ketelsen</a></div></div>`;
+				footer.className = "page-footer amber";
 			},
 
 			m(target, anchor) {
