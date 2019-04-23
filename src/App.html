@@ -1,0 +1,19 @@
+<Nav />
+
+<svelte:component this={page} />
+<Footer />
+<script>
+  import router from "page";
+  import Nav from "./components/Nav.html";
+  import Hero from "./components/Hero.html";
+  import Footer from "./components/Footer.html";
+  import Index from "./Index.html";
+  import Project1 from "./project1/Index.html";
+
+  let page = Index;
+
+  router("/", () => (page = Index));
+  router("/project1", () => (page = Project1));
+
+  router.start();
+</script>

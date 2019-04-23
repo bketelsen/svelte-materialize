@@ -1,0 +1,35 @@
+{
+  "name": "svelte-v3",
+  "version": "0.0.1",
+  "description": "cybernetically enhanced web apps",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "run-p build serve",
+    "serve": "w3 --directory public --pushstate",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "svelte": "^3.0.0-beta.7"
+  },
+  "dependencies": {
+    "page": "^1.11.4",
+    "w3": "^1.0.0"
+  },
+  "engines": {
+    "node": "11.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/svelte-v3"
+  },
+  "license": "MIT",
+  "keywords": [
+    "svelte",
+    "html",
+    "web"
+  ]
+}
