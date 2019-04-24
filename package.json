@@ -17,6 +17,7 @@
     "svelte": "^3.0.0-beta.7"
   },
   "dependencies": {
+    "gotrue-js": "^0.9.25",
     "page": "^1.11.4",
     "w3": "^1.0.0"
   },

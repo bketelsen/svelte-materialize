@@ -2,18 +2,51 @@
 
 <svelte:component this={page} />
 <Footer />
+
 <script>
   import router from "page";
+  import { setContext } from 'svelte';
   import Nav from "./components/Nav.html";
   import Hero from "./components/Hero.html";
   import Footer from "./components/Footer.html";
   import Index from "./Index.html";
+  import Login from "./Login.html";
   import Project1 from "./project1/Index.html";
+  import GoTrue from "gotrue-js";
+  import { gotrue, auth_response } from './stores/auth.js';
+
+  function checkAuth(ctx, next) {
+    if (!isEmpty($auth_response)) {
+      next();
+    } else {
+      console.log("redirect no login")
+      console.log($auth_response);
+    router.redirect('/login');
+    }
+  }
+
+  function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
+
+  const auth = new GoTrue({
+    APIUrl: "http://127.0.0.1:9999",
+    audience: "",
+    setCookie: false
+  });
+
+  gotrue.set(auth);
 
   let page = Index;
 
   router("/", () => (page = Index));
-  router("/project1", () => (page = Project1));
+  router("/login", () => (page = Login));
+  router("/project1", checkAuth, () => (page = Project1));
 
   router.start();
 </script>
