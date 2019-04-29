@@ -4,17 +4,22 @@
   "description": "cybernetically enhanced web apps",
   "main": "public/index.html",
   "scripts": {
-    "start": "run-p build serve",
-    "serve": "w3 --directory public --pushstate",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "dev": "run-p start:dev autobuild",
+    "start": "sirv public",
+    "start:dev": "sirv public -s --dev"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
-    "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-svelte": "^5.0.3",
-    "svelte": "^3.0.0-beta.7"
+    "rollup-plugin-terser": "^4.0.4",
+    "sirv-cli": "^0.3.1",
+    "svelte": "^3.1.0"
+
   },
   "dependencies": {
     "gotrue-js": "^0.9.25",
